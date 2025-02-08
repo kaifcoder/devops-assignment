@@ -10,3 +10,6 @@ def read_root():
 def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
 
+@app.get("/hey/{name}")
+def say_hey(name: str):
+    return {"message": "Hey, " + name}

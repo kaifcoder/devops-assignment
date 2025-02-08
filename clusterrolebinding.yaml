@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: devops101-service-account-binding
+subjects:
+- kind: ServiceAccount
+  name: devops101-service-account
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin  # Replace with a more restrictive role if possible.
+  apiGroup: rbac.authorization.k8s.io

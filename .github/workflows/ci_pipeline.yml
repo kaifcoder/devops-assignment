@@ -1,0 +1,104 @@
+name: CI Pipeline
+
+# Trigger the workflow on pull requests and on pushes (merges) to main.
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  # --- Job 1: Code Review on Pull Requests ---
+  code_review:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    name: "AI Code Review"
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run AI Code Review Script
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GitHub provides the event JSON file; the script will use it to determine diff info.
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python .github/scripts/code_review.py
+
+  # --- Job 2: Deploy on Merge (Push to main) ---
+  deploy:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    name: "Deploy to Kyma"
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # --- Build and Push Docker Image ---
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: cc-ms-k8s-training.common.repositories.cloud.sap
+          username: ${{ secrets.REGISTRY_USERNAME }} // claude
+          password: ${{ secrets.REGISTRY_PASSWORD }} // 9qR5hbhm7Dzw6BNZcRFv
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          # Update the image name as needed.
+          tags: cc-ms-k8s-training.common.repositories.cloud.sap/devops-assignment-I528926:latest
+
+      # --- Deploy to Kyma using kubectl ---
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Deploy to Kyma Cluster
+        env:
+          KUBECONFIG: ${{ secrets.KYMA_KUBECONFIG }} // base64 encoded kubeconfig
+        run: |
+          # Assumes your Kubernetes manifests are located under the k8s/ directory.
+          kubectl apply -f k8s/
+
+  # --- Job 3: Changelog Generation on Merge ---
+  changelog_generation:
+    if: ${{ github.event_name == 'push' }}
+    needs: deploy
+    runs-on: ubuntu-latest
+    name: "Generate Changelog"
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Changelog Generation Script
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python .github/scripts/generate_changelog.py
