@@ -70,7 +70,13 @@ jobs:
         uses: azure/setup-kubectl@v3
         with:
           version: 'latest'
-
+        
+      - name: Configure kubectl
+        run: |
+          echo ${{ secrets.KYMA_KUBECONFIG }} | base64 --decode > kubeconfig
+          mkdir -p ~/.kube
+          mv kubeconfig ~/.kube/config
+            
       - name: Deploy to Kyma Cluster
         env:
           KUBECONFIG: ${{ secrets.KYMA_KUBECONFIG }} // base64 encoded kubeconfig
@@ -102,3 +108,6 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python .github/scripts/generate_changelog.py
+
+        // servicde account
+        eyJhbGciOiJSUzI1NiIsImtpZCI6IkNrb0h5R3lnM1FObHhtWnhTc1FKRnc2X2xtYXJyLXRMekxCWlNGQVBoR2sifQ.eyJhdWQiOlsia3ViZXJuZXRlcyIsImdhcmRlbmVyIl0sImV4cCI6MTczOTA0MzMzMSwiaWF0IjoxNzM5MDM5NzMxLCJpc3MiOiJodHRwczovL2FwaS5mODQ0MzcxLmt5bWEuaW50ZXJuYWwubGl2ZS5rOHMub25kZW1hbmQuY29tIiwianRpIjoiMWY5ODhmNmMtMzUyMy00ODdiLTg0ZjAtYzg5ODg4NGQ5ODJjIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRldm9wczEwMS1zZXJ2aWNlLWFjY291bnQiLCJ1aWQiOiI1MGVjMDVkNC05MWFjLTQ1NmMtYjUyOC0xNWIzMWNiYzZlZWYifX0sIm5iZiI6MTczOTAzOTczMSwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6ZGV2b3BzMTAxLXNlcnZpY2UtYWNjb3VudCJ9.jtNrEk8N-vuDP3v9bmjVxMC6xAxRRbIFw568n7tUehcyuEubpS0Sv_d_GWVdWdi8qkFN9WJ-vu4jJstQhOo8cdoWSHI2APlOOJQdxBcqeZOaK4C3xSMo8mOylnJ23pe8k3fbzAHB2b4Bt1hy-YUGyNGKBErtST0ytE0ovWToq2i9hk3KEvTdTEk7g2vTLZBPvxfZ3c9ZpjUZI2MxiMIy1mgmBQhez0CiA3hA2FRviIfBHvLZNdjmWMtgn7ImiR73fD4p8qJkwvqZJg6bmqAD6IysEs0d5jYDCIlB6jhOn4OspzXxscO4hmq4LeEcRcBueOZeDbtTG3MJJsYBfF1cy3eUM0kOeJ3zH8T4zXmqcU3yl82zRfjScUG-cf9464q_bCJx2CRR-Y0_KQftKyOjYiBrwbdENDMNShF1U1jN6FHrLKcwA8_MJ3JnO6RrcXrhOfLQciAuuiwEyQqoAcB-0NmkXIWfvAFVOBvM6A1AgtJ4aqqXESuBYVRlDy7od9PWmapBzNYLdBUcW07I5kJPhLatQeDj7JxoIAYXcah_4GX9TbMV5juTZu3qAEGEPt2MaV2iAVWOwvrgaqc03CXbFW1t_6Sf-hpcwm08UNqNvoEY8txsgSn2sbU8ISf_r3xhL6HAXzJJXjGijHd-gXwKYWwgl7kOvJ6KVHhF_BVh3bc
