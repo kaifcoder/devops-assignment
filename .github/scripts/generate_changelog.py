@@ -2,7 +2,6 @@
 import os
 import subprocess
 import requests
-import json
 
 def get_last_tag():
     """Returns the most recent git tag, if available."""
