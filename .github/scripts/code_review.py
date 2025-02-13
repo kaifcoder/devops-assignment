@@ -45,7 +45,7 @@ def main():
     diff = ""
     pr_number = None
 
-    if event_name == "pull_request":
+    if event_name == "pull_request" or event_name == "workflow_dispatch":
         event_path = os.environ.get("GITHUB_EVENT_PATH")
         if not event_path:
             print("GITHUB_EVENT_PATH not set.")
@@ -55,6 +55,7 @@ def main():
         pr_number = event_data.get("pull_request", {}).get("number")
         base_sha = event_data.get("pull_request", {}).get("base", {}).get("sha")
         head_sha = event_data.get("pull_request", {}).get("head", {}).get("sha")
+        print(f"PR number: {pr_number}, Base SHA: {base_sha}, Head SHA: {head_sha}")
         if not base_sha or not head_sha:
             print("Missing commit SHAs in PR event.")
             sys.exit(1)
@@ -71,7 +72,7 @@ def main():
 
     # Construct a prompt that instructs the AI to review and then output a JSON object.
     prompt = (
-        "Perform a thorough code review for the following diff. "
+        "Perform a thorough code review for the following diff. Ignore .gitignore, action files, and other non-code changes. "
         "Point out any issues and improvements. "
         "After your review, on a new line output a JSON object with the following keys: "
         "'breaking_changes' (true if any breaking changes are detected, false otherwise) and "
@@ -97,7 +98,7 @@ def main():
         "temperature": 0.2,
         "max_tokens": 32768
     }
-    response = requests.post("https://api.groq.com/v1/chat/completions", headers=headers, json=data)
+    response = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=data)
     if response.status_code != 200:
         print("GroqAI API error:", response.text)
         sys.exit(1)
