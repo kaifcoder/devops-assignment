@@ -51,9 +51,9 @@ def main():
         "temperature": 0.5,
         "max_tokens": 500
     }
-    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=data)
+    response = requests.post("https://api.groq.com/openapi/v1/chat/completions", headers=headers, json=data)
     if response.status_code != 200:
-        print("OpenAI API error:", response.text)
+        print("Groq API error:", response.text)
         return
 
     changelog = response.json()["choices"][0]["message"]["content"]
