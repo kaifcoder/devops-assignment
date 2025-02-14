@@ -14,11 +14,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: devops-assignment
+      app: devops-assignment
   template:
     metadata:
       labels:
-        name: devops-assignment
+        app: devops-assignment
     spec:
       containers:
       - name: devops-assignment
