@@ -29,4 +29,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the application.
-CMD uvicorn app:app
+CMD ["python", "app.py"]
