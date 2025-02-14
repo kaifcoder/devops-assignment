@@ -73,8 +73,9 @@ jobs:
         
       - name: update kubernetes deployment with new image
         run: |
-          sed -i 's|cc-ms-k8s-training.common.repositories.cloud.sap/devops-assignment-i528926:.*|cc-ms-k8s-training.common.repositories.cloud.sap/devops-assignment-i528926:${{ github.sha }}|g' k8s/app.yaml
-          cat k8s/app.yaml
+          cd k8s
+          sed -i 's|cc-ms-k8s-training.common.repositories.cloud.sap/devops-assignment-i528926:.*|cc-ms-k8s-training.common.repositories.cloud.sap/devops-assignment-i528926:${{ github.sha }}|g' app.yaml
+          cat app.yaml
             
       - name: Deploy to Kyma Cluster
         run: |
