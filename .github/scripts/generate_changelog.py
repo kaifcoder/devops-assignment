@@ -80,15 +80,6 @@ def main():
         f.write(changelog + "\n")
     print("Changelog generated and saved to CHANGELOG.md.")
 
-    # Commit the changelog.
-    subprocess.run(["git", "add", "CHANGELOG.md"])
-    subprocess.run(["git", "commit", "-m", "Update changelog [skip ci]"])
-    print("Changelog committed.")
-
-    # Push the changes.
-    subprocess.run(["git", "push"])
-    print("Changes pushed.")
-
    
 
 if __name__ == "__main__":
