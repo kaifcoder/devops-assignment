@@ -123,4 +123,4 @@ jobs:
           git pull origin main
           git add CHANGELOG.md
           git commit -m "Update changelog [ci skip]"
-          git push origin main
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
