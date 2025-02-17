@@ -95,6 +95,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: set up git credentials
+        run: |
+          git config --global user.email "kaifmohd2014@gmail.com"
+          git config --global user.name "kaifcoder"
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
