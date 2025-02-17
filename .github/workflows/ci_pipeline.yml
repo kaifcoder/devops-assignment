@@ -123,3 +123,5 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Update changelog [ci skip]"
           git push origin main
+          gh pr comment ${{ github.event.number }} -b "Changelog updated. Please review."
+          gh pr merge ${{ github.event.number }} --merge --auto --delete-branch
