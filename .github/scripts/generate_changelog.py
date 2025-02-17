@@ -76,7 +76,7 @@ def main():
 
     # Write the changelog to a file.
     with open("CHANGELOG.md", "a") as f:
-        f.write(f"\n## {last_tag or 'Latest Changes'}\n")
+        f.write(f"\n## {last_commit or 'Latest Changes'}\n")
         f.write(changelog + "\n")
     print("Changelog generated and saved to CHANGELOG.md.")
 
