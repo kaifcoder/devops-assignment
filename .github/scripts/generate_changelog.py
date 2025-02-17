@@ -29,8 +29,8 @@ def get_diff():
 
 def main():
     # Retrieve commit messages since the last tag.
-    get_last_commit = get_last_commit()
-    commit_messages = get_commit_messages(get_last_commit)
+    last_commit = get_last_commit()
+    commit_messages = get_commit_messages(last_commit)
     diff = get_diff()
     if not commit_messages:
         print("No commit messages found.")
