@@ -59,13 +59,13 @@ def main():
         "Authorization": f"Bearer {openai_api_key}"
     }
     data = {
-        "model": "gpt-3.5-turbo",
+        "model": "llama-3.3-70b-versatile",
         "messages": [
             {"role": "system", "content": "You are an expert technical writer."},
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.5,
-        "max_tokens": 500
+        "max_tokens": 32768
     }
     response = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=data)
     if response.status_code != 200:
