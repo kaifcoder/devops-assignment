@@ -20,3 +20,23 @@
 ### Impact
 
 This release is expected to improve the reliability and security of the CI pipeline by properly setting up Git credentials. Users can expect a more stable and efficient pipeline execution, reducing the likelihood of errors and authentication issues.
+
+## 3a5400dfc13778cd4c4a98b97a7ef8163ff51f2e
+**Changelog**
+
+**Version:** [Insert Version Number]
+**Release Date:** [Insert Release Date]
+
+**Summary:**
+This release introduces a key update to the Continuous Integration (CI) pipeline, enhancing the automation of changelog updates.
+
+**Changes:**
+
+* **CI Pipeline Update:** The CI pipeline has been modified to create a draft Pull Request (PR) for changelog updates. This change aims to streamline the process of managing and updating the changelog, making it more efficient and reducing manual effort.
+* **Updated Workflow File:** The `.github/workflows/ci_pipeline.yml` file has been updated to reflect these changes. Specifically, 2 lines of code have been inserted and 2 lines have been deleted to implement the new functionality.
+
+**Impact:**
+This update is expected to improve the overall development workflow by automating the creation of draft PRs for changelog updates. This should lead to more accurate and timely changelog maintenance, ultimately enhancing the transparency and reliability of the project.
+
+**Upgrade Instructions:**
+No specific upgrade instructions are required for this release, as the changes are focused on the CI pipeline and do not affect the project's functionality or user interface. However, developers working on the project should be aware of the updated CI pipeline behavior when creating and managing changelog updates.
