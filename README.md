@@ -14,3 +14,6 @@
 - Docker
 - Groq (llama)
 
+# Changelogs 
+
+For detailed changelogs, see the [CHANGELOG.md](CHANGELOG.md) file.
