@@ -4,7 +4,6 @@ import json
 import subprocess
 import requests
 import sys
-import re
 
 def get_diff_for_pr(base, head):
     result = subprocess.run(["git", "diff", base, head], capture_output=True, text=True)
@@ -27,18 +26,6 @@ def post_pr_comment(owner, repo, pr_number, comment, token):
     else:
         print("Posted comment successfully.")
 
-def extract_json(response_text):
-    # Look for a JSON object containing the key "breaking_changes"
-    pattern = r'(\{.*"breaking_changes".*\})'
-    match = re.search(pattern, response_text, re.DOTALL)
-    if match:
-        json_str = match.group(1)
-        try:
-            data = json.loads(json_str)
-            return data
-        except Exception as e:
-            print("Error parsing JSON:", e)
-    return None
 
 def main():
     event_name = os.environ.get("GITHUB_EVENT_NAME")
