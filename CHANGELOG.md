@@ -60,3 +60,22 @@ No specific upgrade instructions are required for this release, as the changes a
 * `.github/workflows/ci_pipeline.yml`
 
 This release focuses on improving the internal processes of the CI pipeline, specifically the changelog update mechanism. These changes are designed to enhance the overall quality and reliability of the project's changelog, making it easier for users to track changes and updates.
+
+## 1fa3429361f009bafaf5cc80623118b67f7b5618
+**Changelog**
+
+**Version [Insert Version Number]**
+
+### Fixes
+
+* **Code Review Job Optimization**: The code review job has been updated to exclude pull requests that are solely for updating the changelog. This change aims to reduce unnecessary code reviews and improve the overall efficiency of the continuous integration pipeline.
+
+### Changes
+
+* **Updated CI Pipeline Configuration**: The `.github/workflows/ci_pipeline.yml` file has been modified to reflect the above change. Specifically, one line was added and one line was removed to implement the exclusion of changelog update PRs from the code review job.
+
+### Affected Files
+
+* `.github/workflows/ci_pipeline.yml`
+
+This release focuses on optimizing the code review process by excluding changelog update PRs, resulting in a more streamlined and efficient continuous integration pipeline.
