@@ -60,3 +60,28 @@ No specific upgrade instructions are required for this release, as the changes a
 * `.github/workflows/ci_pipeline.yml`
 
 This release focuses on improving the internal processes of the CI pipeline, specifically the changelog update mechanism. These changes are designed to enhance the overall quality and reliability of the project's changelog, making it easier for users to track changes and updates.
+
+## 435f674251ee2565998a2e9df3847d7d23dc991c
+**Changelog**
+
+**Release Summary**
+This release introduces a new feature, enhances the code review script, and improves the CI pipeline by removing unnecessary checks.
+
+**New Features**
+
+* **User Greeting Endpoint**: A new endpoint has been added to greet users by name, enhancing the overall user experience.
+
+**Bug Fixes and Enhancements**
+
+* **Code Review Script**: The code review script has been enhanced to format AI responses as JSON, making it easier to parse and understand the output. Additionally, the script now handles breaking changes, ensuring that the code review process is more robust.
+* **CI Pipeline**: The CI pipeline has been improved by removing the following unnecessary checks:
+	+ Conditional check for skipping code review: This check has been removed, ensuring that code reviews are always performed.
+	+ Changelog-only PR check: This check has been removed, streamlining the CI pipeline process.
+
+**Internal Changes**
+
+* The `.github/scripts/code_review.py` script has been updated with 19 changes, including the enhancements mentioned above.
+* The `.github/workflows/ci_pipeline.yml` file has been updated with 12 changes, primarily removing unnecessary checks.
+* The `app.py` file has been updated with 4 changes, adding the new user greeting endpoint.
+
+Overall, this release improves the code review process, enhances the user experience, and streamlines the CI pipeline.
