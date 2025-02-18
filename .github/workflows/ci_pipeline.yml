@@ -121,5 +121,5 @@ jobs:
         run: |
           git add CHANGELOG.md
           git commit -m "Update Changelog [ci skip]"
-          git push origin main --force
+          git push --force origin main 
           
