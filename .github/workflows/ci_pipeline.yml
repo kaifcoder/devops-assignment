@@ -124,5 +124,5 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Update changelog"
           git push origin update-changelog
-          gh pr create --base main --head update-changelog --title "Update Changelog [ci skip]" --body "This PR updates the changelog. [ci skip]"
+          gh pr create --base main --head update-changelog --title "Update Changelog" --body "This PR updates the changelog."
           gh pr merge --body "Merging changelog updates into main branch. [ci skip]"  --merge --auto --delete-branch 
