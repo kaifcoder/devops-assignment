@@ -40,3 +40,22 @@ This update is expected to improve the overall development workflow by automatin
 
 **Upgrade Instructions:**
 No specific upgrade instructions are required for this release, as the changes are focused on the CI pipeline and do not affect the project's functionality or user interface. However, developers working on the project should be aware of the updated CI pipeline behavior when creating and managing changelog updates.
+
+## 6789edeb57502dfa8bc5a36dca20becf3be07410
+**Changelog**
+
+**Version:** [Insert Version Number]
+**Release Date:** [Insert Release Date]
+
+### Fixes
+
+* **Enhanced CI Pipeline**: The Continuous Integration (CI) pipeline has been improved to better handle changelog updates. Specifically, the pipeline now includes improved Pull Request (PR) merge messages, enhancing the overall efficiency and accuracy of the changelog generation process.
+* **Updated CI Pipeline Configuration**: The `.github/workflows/ci_pipeline.yml` file has been updated to reflect these changes, with 2 lines added and 2 lines removed to optimize the pipeline's performance.
+
+### Affected Files
+
+* `.github/workflows/ci_pipeline.yml`: This file has been modified to incorporate the enhancements to the CI pipeline.
+
+### Impact
+
+This release focuses on improving the internal tooling and automation of the project, specifically the CI pipeline. The enhancements to the PR merge messages will lead to more accurate and informative changelogs, making it easier for users to track changes and updates to the project. Overall, this release contributes to the project's maintainability and scalability.
