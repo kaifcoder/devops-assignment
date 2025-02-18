@@ -78,7 +78,14 @@ def main():
         "'breaking_changes' (true if any breaking changes are detected, false otherwise) and "
         "'explanation' (a short explanation for your decision). "
         "Ensure that the JSON is the only content on that line.\n\n"
-        "Diff:\n" + diff
+        "Diff:\n" + diff + "\n"
+        "Give the Output JSON in Following Format:\n"
+        "{\n"
+        "  \"review\": <Generated Review>,\n"
+        "  \"breaking_changes\": false,\n"
+        "  \"explanation\": \"No breaking changes detected.\"\n"
+        "}\n"
+
     )
 
     openai_api_key = os.environ.get("GROQ_API_KEY")
@@ -96,6 +103,9 @@ def main():
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.2,
+        "response_format": {
+                "type": "json_object"
+        },
         "max_tokens": 32768
     }
     response = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=data)
@@ -106,7 +116,8 @@ def main():
     full_response = response.json()["choices"][0]["message"]["content"]
     print("Full AI Response:\n", full_response)
     
-    json_data = extract_json(full_response)
+    json_data = json.loads(full_response)
+
     if not json_data:
         print("No JSON data could be extracted from AI response.")
         sys.exit(1)
@@ -118,10 +129,12 @@ def main():
             owner, repo = repo_full.split("/")
             github_token = os.environ.get("GITHUB_TOKEN")
             if github_token:
-                post_pr_comment(owner, repo, pr_number, full_response, github_token)
+                post_pr_comment(owner, repo, pr_number, json_data.get("review", "no review provided"), github_token)
     
     if json_data.get("breaking_changes"):
         print("Breaking changes detected:", json_data.get("explanation", "No explanation provided."))
+        post_pr_comment(owner, repo, pr_number, "Breaking changes detected.", github_token)
+        post_pr_comment(owner, repo, pr_number, json_data.get("explanation", "No explanation provided."), github_token)
         sys.exit(1)  # Fail the job to block merging.
     else:
         print("No breaking changes detected.")

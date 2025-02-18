@@ -14,6 +14,10 @@ def read_item(item_id: int, q: str = None):
 def say_hey(name: str):
     return {"message": "Hey, " + name}
 
+@app.get("/hello/{name}")
+def say_hello(name: str):
+    return {"message": "Hello, " + name}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
