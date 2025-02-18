@@ -10,7 +10,7 @@ on:
 jobs:
   # --- Job 1: Code Review on Pull Requests ---
   code_review:
-    if: ${{ github.event_name == 'pull_request'}}
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' }}
     runs-on: ubuntu-latest
     name: "AI Code Review"
     steps:
