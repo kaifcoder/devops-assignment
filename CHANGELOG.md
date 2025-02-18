@@ -60,3 +60,25 @@ No specific upgrade instructions are required for this release, as the changes a
 * `.github/workflows/ci_pipeline.yml`
 
 This release focuses on improving the internal processes of the CI pipeline, specifically the changelog update mechanism. These changes are designed to enhance the overall quality and reliability of the project's changelog, making it easier for users to track changes and updates.
+
+## f45885ffca12869328564c79de2951a0fc40efdc
+**Changelog: Automated Changelog Update PRs**
+
+### Summary
+
+This release introduces an update to the Continuous Integration (CI) pipeline, enabling the automatic creation and merging of changelog update pull requests (PRs). This change aims to streamline the development process and improve the efficiency of maintaining the project's changelog.
+
+### Changes
+
+* **CI Pipeline Update**: The CI pipeline configuration file (`ci_pipeline.yml`) has been modified to include automated changelog update functionality.
+* **Automated Changelog PRs**: The updated pipeline now automatically creates and merges PRs for changelog updates, reducing manual effort and ensuring that the changelog remains up-to-date.
+* **Improved Development Efficiency**: This change is expected to improve the overall development workflow by eliminating the need for manual changelog updates and allowing developers to focus on other tasks.
+
+### Technical Details
+
+* The `ci_pipeline.yml` file has been updated with 5 new insertions and 1 deletion, reflecting the changes made to the CI pipeline configuration.
+* The updated pipeline is designed to work seamlessly with existing workflows, ensuring a smooth transition to automated changelog updates.
+
+### Impact
+
+This release is expected to have a positive impact on the development process, as it reduces manual effort and improves the accuracy of the project's changelog. Developers can now focus on other tasks, and the automated changelog update process ensures that the project's history is accurately reflected.
