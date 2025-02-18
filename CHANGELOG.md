@@ -60,3 +60,15 @@ No specific upgrade instructions are required for this release, as the changes a
 * `.github/workflows/ci_pipeline.yml`
 
 This release focuses on improving the internal processes of the CI pipeline, specifically the changelog update mechanism. These changes are designed to enhance the overall quality and reliability of the project's changelog, making it easier for users to track changes and updates.
+
+## Latest Changes
+## Changelog
+### Latest Changes
+
+* **Changelog Generation Update**: The changelog generation script has been updated to consistently use the 'Latest Changes header. This change ensures that the changelog is formatted correctly and follows a standardized structure, making it easier to read and understand the latest updates.
+
+### Technical Details
+* The update was made in the `.github/scripts/generate_changelog.py` file.
+* The change involved modifying the script to insert the 'Latest Changes' header, replacing the previous header or formatting.
+
+This release focuses on improving the consistency and readability of the changelog, making it easier for users to stay up-to-date with the latest changes and updates.
