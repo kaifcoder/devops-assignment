@@ -60,3 +60,30 @@ No specific upgrade instructions are required for this release, as the changes a
 * `.github/workflows/ci_pipeline.yml`
 
 This release focuses on improving the internal processes of the CI pipeline, specifically the changelog update mechanism. These changes are designed to enhance the overall quality and reliability of the project's changelog, making it easier for users to track changes and updates.
+
+## f45885ffca12869328564c79de2951a0fc40efdc
+## Changelog
+
+### Version [Insert Version Number]
+
+#### Improvements
+
+* **Automated Changelog Updates**: The CI pipeline has been updated to automatically create and merge pull requests for changelog updates. This streamlines the process of maintaining accurate and up-to-date changelogs, reducing manual effort and minimizing the risk of human error.
+
+#### Changes
+
+* The `.github/workflows/ci_pipeline.yml` file has been modified to incorporate the automated changelog update functionality. Specifically, 5 new lines of code have been added and 1 line has been removed to support this feature.
+
+#### Bug Fixes
+
+* None
+
+#### Deprecations
+
+* None
+
+#### Known Issues
+
+* None
+
+This release focuses on improving the efficiency and reliability of the changelog update process. By automating this task, the development team can focus on other priorities while ensuring that the changelog remains current and accurate.
