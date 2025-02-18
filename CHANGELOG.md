@@ -60,3 +60,23 @@ No specific upgrade instructions are required for this release, as the changes a
 * `.github/workflows/ci_pipeline.yml`
 
 This release focuses on improving the internal processes of the CI pipeline, specifically the changelog update mechanism. These changes are designed to enhance the overall quality and reliability of the project's changelog, making it easier for users to track changes and updates.
+
+## ea35ec8ad0c54fe203b57e9fbbc36a6425418368
+**Changelog**
+
+**Version:** [Insert version number]
+**Release Date:** [Insert release date]
+
+**Summary:**
+This release introduces an enhancement to the Continuous Integration (CI) pipeline, improving the efficiency of the code review process for specific types of pull requests.
+
+**Changes:**
+
+* **CI Pipeline Enhancement:** The CI pipeline has been updated to skip code reviews for pull requests that only contain changes to the changelog. This optimization aims to reduce unnecessary code review cycles, streamlining the development process and allowing for faster iteration on changelog updates.
+* **Updated CI Configuration:** The `.github/workflows/ci_pipeline.yml` file has been modified to include the new logic for skipping code reviews. The changes include 16 new insertions and 4 deletions, reflecting the updated configuration.
+
+**Impact:**
+This change is expected to have a positive impact on the development workflow, particularly for maintainers and contributors who frequently update the changelog. By automating the skipping of code reviews for changelog-only pull requests, the team can focus on more critical code reviews, improving overall productivity and efficiency.
+
+**Upgrade Notes:**
+No specific upgrade actions are required for this release. The changes are automatically applied to the CI pipeline, and users can continue to submit pull requests as usual. However, maintainers and contributors should be aware of the new behavior when submitting changelog-only pull requests.
