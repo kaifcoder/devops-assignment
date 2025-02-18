@@ -122,8 +122,8 @@ jobs:
           git pull origin main
           git checkout -b update-changelog
           git add CHANGELOG.md
-          git commit -m "Update Changelog"
+          git commit -m "Update Changelog [ci skip]"
           git push origin update-changelog
-          gh pr create --base main --head update-changelog --title "Update Changelog" --body "This PR updates the changelog."
-          gh pr merge --merge --auto --delete-branch --body "Merging changelog updates into main branch." 
+          gh pr create --base main --head update-changelog --title "Update Changelog [ci skip]" --body "This PR updates the changelog. [ci skip]"
+          gh pr merge --merge --auto --delete-branch --body "Merging changelog updates into main branch. [ci skip]" 
           
