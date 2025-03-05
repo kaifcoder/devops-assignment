@@ -72,3 +72,27 @@ This release focuses on improving the internal processes of the CI pipeline, spe
 * The change involved modifying the script to insert the 'Latest Changes' header, replacing the previous header or formatting.
 
 This release focuses on improving the consistency and readability of the changelog, making it easier for users to stay up-to-date with the latest changes and updates.
+
+## Latest Changes
+**Changelog: Release [Insert Release Version]**
+
+### Summary
+
+This release includes a minor update to the Kubernetes configuration to ensure proper ingress configuration. The changes are focused on updating the host in the `app.yaml` file to align with the required settings for ingress.
+
+### Changes
+
+* **Updated Ingress Configuration**: The `host` field in the `app.yaml` file has been updated to reflect the correct settings for ingress configuration. This change ensures that the application is properly exposed to external traffic.
+* **Kubernetes Configuration Adjustment**: The `app.yaml` file, which is used to configure the Kubernetes deployment, has been modified to include the updated `host` information. This adjustment is necessary to maintain consistency with the ingress configuration.
+
+### Affected Files
+
+* `k8s/app.yaml`: This file has been updated with the new `host` information, replacing the previous configuration. The changes include 2 insertions and 2 deletions, reflecting the updated settings.
+
+### Commit History
+
+This release is based on the merge of pull request #16 from the `devops-changes` branch, which was contributed by `kaifcoder`. The commit message `fix: update host in app.yaml for ingress configuration` provides a brief description of the changes included in this release.
+
+### Upgrade Notes
+
+No specific upgrade instructions are required for this release, as the changes are limited to the `app.yaml` file and do not affect the overall application functionality. However, it is recommended to review the updated `app.yaml` file to ensure that the changes align with your specific deployment requirements.
