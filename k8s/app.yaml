@@ -37,7 +37,7 @@ metadata:
 spec:
   ingressClassName: istio
   rules:
-    - host: devops-assignment.f844371.kyma.ondemand.com
+    - host: devops-assignment.c-3b70c67.kyma.ondemand.com
       http:
         paths:
         - backend:
@@ -49,6 +49,6 @@ spec:
           pathType: Prefix
   tls:
     - hosts:
-      - devops-assignment.f844371.kyma.ondemand.com
+      - devops-assignment.c-3b70c67.kyma.ondemand.com
       secretName: kyma-gateway-certs
   
