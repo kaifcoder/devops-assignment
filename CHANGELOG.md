@@ -38,3 +38,27 @@ These changes improve the application's reliability and make it easier to diagno
 ### Upgrade Notes
 
 No specific upgrade instructions are required for this release, as the changes are primarily internal and do not affect the application's external interface. However, developers working with the codebase should be aware of the removed redundant error function definition and the new error handling route.
+
+## Latest Changes
+**Changelog: Release Notes**
+
+This release addresses syntax errors in the `say_hello` function, ensuring the codebase is stable and functional. The key changes are summarized below:
+
+### Bug Fixes
+
+* **Syntax Error Correction**: A syntax error in the `say_hello` function's return statement has been corrected, preventing potential runtime errors.
+* **Function Definition Correction**: An additional syntax error in the `say_hello` function's definition has been resolved, ensuring the function is properly defined and can be executed without issues.
+
+### Code Changes
+
+The corrections have resulted in the modification of a single file, `app.py`, with three new insertions. These changes are focused on rectifying the syntax errors, thereby improving the overall code quality and reliability.
+
+### Commit History
+
+This release is the result of merging pull request #20 from the `feature` branch, which originated from the `kaifcoder/devops-assignment` repository. The changes were integrated into the `feature` branch after resolving the syntax errors and verifying the code's stability.
+
+### Affected Files
+
+* `app.py`: The sole file modified in this release, with three new insertions to correct the syntax errors in the `say_hello` function.
+
+By addressing these syntax errors, this release enhances the codebase's integrity and paves the way for future development and feature additions.
