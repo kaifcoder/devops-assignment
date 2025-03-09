@@ -23,6 +23,9 @@ def say_hello(name: str):
 def error():
     return 1/0
 
+@app.get("/experiment}")
+def say_hello(name: str):
+    return {"message": "mistake"
 
 
 if __name__ == "__main__":
