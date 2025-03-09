@@ -24,9 +24,6 @@ def error():
     return 1/0
 
 
-@app.get("/")
-def error():
-    return 1/0
 
 if __name__ == "__main__":
     import uvicorn
