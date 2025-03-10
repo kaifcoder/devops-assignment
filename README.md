@@ -1,6 +1,7 @@
 # Devops Assignment
 
-<img width="1341" alt="image" src="https://github.com/user-attachments/assets/3ed69014-86f7-4b3c-8952-42c407296b03" />
+<img width="1568" alt="image" src="https://github.com/user-attachments/assets/3bda14b8-1c54-4204-8d40-58fddee172c3" />
+
 
 
 ## Features of the pipeline 
