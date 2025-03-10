@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline with ai code review
 
 # Trigger the workflow on pull requests and on pushes (merges) to main.
 on:
