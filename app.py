@@ -10,6 +10,10 @@ def read_root():
 def say_hello(name: str):
     return {"message": "Hello, " + name}
 
+@app.get("/add/{num1}/{num2}")
+def add(num1: int, num2: int):
+    return {"result": num1 + num}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
