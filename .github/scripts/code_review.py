@@ -60,7 +60,8 @@ def main():
     # Construct a prompt that instructs the AI to review and then output a JSON object.
     prompt = (
         "Perform a thorough code review for the following diff. Ignore .gitignore, action files, and other non-code changes."
-        "Point out any issues and improvements."
+        "Point out any issues and improvements. \n"
+        "If there are any logical errors or bugs then also trigger the breaking_changes flag.\n"
         "After your review, on a new line output a JSON object with the following keys: "
         "'breaking_changes' (true if any breaking changes are detected, false otherwise) and "
         "'explanation' (a short explanation for your decision). "
@@ -115,12 +116,12 @@ def main():
             owner, repo = repo_full.split("/")
             github_token = os.environ.get("GITHUB_TOKEN")
             if github_token:
-                post_pr_comment(owner, repo, pr_number, json_data.get("review", "no review provided"), github_token)
+                post_pr_comment(owner, repo, pr_number, str(json_data.get("review", "no review provided")), github_token)
     
     if json_data.get("breaking_changes"):
-        print("Breaking changes detected:", json_data.get("explanation", "No explanation provided."))
+        print("Breaking changes detected:", str(json_data.get("explanation", "No explanation provided.")))
         post_pr_comment(owner, repo, pr_number, "Breaking changes detected.", github_token)
-        post_pr_comment(owner, repo, pr_number, json_data.get("explanation", "No explanation provided."), github_token)
+        post_pr_comment(owner, repo, pr_number, str(json_data.get("explanation", "No explanation provided.")), github_token)
         sys.exit(1)  # Fail the job to block merging.
     else:
         print("No breaking changes detected.")
