@@ -12,7 +12,7 @@ def say_hello(name: str):
 
 @app.get("/add/{num1}/{num2}")
 def add(num1: int, num2: int):
-    return {"result": num1 + num}
+    return {"result": num1 + num2 + num3}
 
 if __name__ == "__main__":
     import uvicorn
