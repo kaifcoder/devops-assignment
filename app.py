@@ -14,6 +14,10 @@ def say_hello(name: str):
 def add(a: int, b: int):
     return {"result": a + b}
 
+@app.get("/sub/{a}/{b}")
+def sub(a: int, b: int):
+    return {"result": a - b - c}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
