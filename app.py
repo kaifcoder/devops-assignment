@@ -8,8 +8,7 @@ def read_root():
 
 @app.get("/hello/{name}")
 def say_hello(name: str):
-    # Breaking change: Change the JSON structure returned by this endpoint
-    return {"greeting": f"Hi, {name}!"}
+    return {"message": "Hello, " + name}
 
 if __name__ == "__main__":
     import uvicorn
