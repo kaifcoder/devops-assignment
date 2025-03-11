@@ -16,7 +16,8 @@ def add(a: int, b: int):
 
 @app.get("/divide/{a}/{b}")
 def divide(a: int, b: int):
-    return {"result": a/b}
+    result = a / b if b != 0 else "Division by zero"
+    return {"result": result}
 
 if __name__ == "__main__":
     import uvicorn
