@@ -62,3 +62,28 @@ This release is the result of merging pull request #20 from the `feature` branch
 * `app.py`: The sole file modified in this release, with three new insertions to correct the syntax errors in the `say_hello` function.
 
 By addressing these syntax errors, this release enhances the codebase's integrity and paves the way for future development and feature additions.
+
+## Latest Changes
+## Changelog
+
+### Version [Insert Version Number]
+
+This release introduces a new feature and fixes a critical issue in the division endpoint.
+
+#### New Features
+
+* **Division Endpoint**: A new endpoint, `/divide`, has been added to the application, allowing users to divide two integers.
+
+#### Bug Fixes
+
+* **Division by Zero**: A fix has been implemented to handle division by zero in the `/divide` endpoint, preventing potential errors and ensuring the application's stability.
+
+#### Changes
+
+* The `app.py` file has been updated with 6 new lines of code to support the new `/divide` endpoint and division by zero handling.
+
+#### Commit History
+
+This release is based on the merge of pull request #28 from the `kaifcoder/features-1` branch.
+
+Note: The version number should be replaced with the actual version number of the release.
