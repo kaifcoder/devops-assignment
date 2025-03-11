@@ -12,8 +12,9 @@ def say_hello(name: str):
 
 # New endpoint introducing a breaking change
 @app.get("/greet/{name}")
-def greet(name: str):
-    # Breaking change: Different response format
+def greet(name: str, format: str = "new"):
+    if format == "old":
+        return {"message": f"Hello, {name}"}
     return {"greeting": f"Hi, {name}!", "status": "success"}
 
 if __name__ == "__main__":
