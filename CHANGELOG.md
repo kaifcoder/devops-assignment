@@ -87,3 +87,17 @@ This release introduces a new feature and fixes a critical issue in the division
 This release is based on the merge of pull request #28 from the `kaifcoder/features-1` branch.
 
 Note: The version number should be replaced with the actual version number of the release.
+
+## Latest Changes
+**Changelog: Release [Insert Release Number]**
+
+### New Features
+* **Division Endpoint**: A new endpoint has been added to perform division operations. This endpoint allows users to divide two numbers and receive the result.
+
+### Bug Fixes
+* **Division by Zero Handling**: A bug fix has been implemented to handle division by zero in the new division endpoint. This prevents the application from crashing or producing incorrect results when attempting to divide by zero.
+
+### Changes
+* **Updated App.py**: The `app.py` file has been modified to include the new division endpoint and division by zero handling. A total of 4 new lines of code have been added to the file.
+
+This release focuses on introducing a new division endpoint and ensuring the application's stability by handling potential division by zero errors. These changes enhance the overall functionality and reliability of the application.
