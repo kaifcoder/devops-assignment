@@ -1,25 +1,20 @@
 
 ## Latest Changes
-## Changelog
+**Changelog: Release [Insert Release Version]**
 
-### Release Summary
+### Summary
 
-This release introduces significant improvements to the auto-merge workflow, enhancing its functionality, clarity, and efficiency. The changes aim to simplify the workflow, reduce unnecessary steps, and improve the overall user experience.
+This release addresses minor issues in the Continuous Deployment (CD) pipeline configuration, enhancing overall pipeline stability and readability.
 
-### Key Changes
+### Changes
 
-1. **Simplified Auto-Merge Workflow**: The auto-merge workflow has been refactored to simplify trigger conditions for Dependabot PRs, making it more efficient and easier to maintain.
-2. **Restrict Auto-Merge to Main Branch**: The auto-merge workflow is now restricted to pull requests targeting the main branch, ensuring that auto-merges only occur on the primary branch.
-3. **Improved Code Review Script**: The code review script has been updated to ignore changes in YAML files and specify markdown format for generated review output, enhancing the review process.
-4. **Enhanced Test Messages**: The `test_automerge` message has been updated for clarity and to reflect version 3, providing more accurate and informative test results.
-5. **Workflow Renaming**: The auto-merge workflow has been renamed for clarity, improving the overall readability and understanding of the workflow.
-6. **Removed Unnecessary Rebase Option**: The unnecessary rebase option has been removed from the auto-merge command, streamlining the workflow and reducing potential errors.
-7. **Added Auto-Merge and Branch Deletion Steps**: Auto-merge and branch deletion steps have been added to the workflow, providing a more comprehensive and automated process.
+* **CD Pipeline Configuration Update**: The CD pipeline YAML file (`cd_pipeline.yml`) has been updated to fix indentation issues, ensuring proper formatting and consistency.
+* **Token Usage Improvement**: The usage of tokens within the CD pipeline has been updated, aligning with best practices and improving the overall security and efficiency of the pipeline.
 
-### Technical Changes
+### Affected Files
 
-* The `.github/workflows/auto_merge.yml` file has been updated with 8 insertions and 3 deletions, reflecting the changes made to the auto-merge workflow.
+* `.github/workflows/cd_pipeline.yml`: This file has undergone changes to address the mentioned issues, with 5 new lines added and 5 lines removed to reflect the updates.
 
-### Upgrade Notes
+### Impact
 
-This release is a significant improvement to the auto-merge workflow, and users are encouraged to upgrade to take advantage of the new features and improvements. Please review the updated workflow and code review script to ensure a smooth transition.
+These changes are expected to have a minimal impact on the overall functionality of the system, but they contribute to maintaining a clean, readable, and efficient CD pipeline configuration. This release is primarily focused on housekeeping and does not introduce new features or functionality.
