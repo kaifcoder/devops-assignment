@@ -126,3 +126,35 @@ This release is based on the merge of pull request #32 from the `kaifcoder/featu
 ### Affected Files
 
 * `app.py`: This file has been modified to include the new division endpoint and division by zero handling.
+
+## Latest Changes
+**Changelog: Release Notes**
+
+**Version:** [Insert version number]
+**Release Date:** [Insert release date]
+
+### New Features
+
+* **Division Operation:** A new `divide` function has been added to perform division operations. This function enables users to divide numbers and obtain accurate results.
+
+### Bug Fixes
+
+* **Division by Zero Handling:** The `divide` function now handles division by zero errors, preventing potential crashes or unexpected behavior. This ensures a more stable and reliable user experience.
+
+### Changes
+
+* **Updated Codebase:** The `app.py` file has been updated with the new `divide` function, incorporating the necessary logic to handle division operations and division by zero errors. A total of 4 new lines of code have been added to the file.
+
+### Commit History
+
+This release is based on the merge of pull request #34 from the `kaifcoder/feature-4` branch. The changes in this release are the result of the following commits:
+
+* Merge pull request #34 from kaifcoder/feature-4
+* Handle division by zero in divide function
+* Add divide function to perform division operation
+
+### Affected Files
+
+* `app.py`: 1 file changed, with 4 new lines of code added.
+
+This release provides a more robust and reliable division operation, handling potential errors and exceptions. Users can now perform division operations with confidence, knowing that the application will handle division by zero errors gracefully.
