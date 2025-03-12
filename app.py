@@ -20,6 +20,10 @@ def multiply(a: int, b: int):
         return {"error": "Both a and b must be integers."}
     return {"result": a * b}
 
+@app.get("/divide/{a}/{b}")
+def divide(a: int, b: int):
+    return {"result": a / b}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
