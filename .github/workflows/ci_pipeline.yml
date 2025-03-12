@@ -122,4 +122,4 @@ jobs:
           git pull origin main
           git add CHANGELOG.md
           git commit -m "Update Changelog [ci skip]"
-          git push origin main
+          git push --force
