@@ -20,11 +20,6 @@ def multiply(a: int, b: int):
         return {"error": "Both a and b must be integers."}
     return {"result": a * b}
 
-@app.get("/test_automerge")
-def test_automerge():
-    return {"message": "This is a test for automerge."}
-
-
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
