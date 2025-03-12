@@ -60,6 +60,7 @@ def main():
     # Construct a prompt that instructs the AI to review and then output a JSON object.
     prompt = (
         "Perform a thorough code review for the following diff. Ignore .gitignore, action files, and other non-code changes."
+        "Ignore any changes in yml files. \n"
         "Point out any issues and improvements. \n"
         "If there are any logical errors or bugs then also trigger the breaking_changes flag.\n"
         "After your review, on a new line output a JSON object with the following keys: "
