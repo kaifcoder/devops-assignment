@@ -1,27 +1,23 @@
 
 ## Latest Changes
-**Changelog: Release [Insert Version Number]**
+**Changelog: Release Notes**
 
-This release introduces significant enhancements to the code review process and expands the application's functionality. The key changes are summarized below:
+### New Features
 
-### Code Review Enhancements
+* **Power Endpoint**: A new endpoint has been added to calculate exponentiation, allowing users to perform power operations.
 
-* The code review script has been updated to include additional breaking change criteria, allowing for more comprehensive and accurate code reviews.
-* These enhancements aim to improve the overall quality and reliability of the codebase.
+### Bug Fixes
 
-### New Endpoint: Subtract
+* **Power Endpoint Implementation**: The power endpoint implementation has been corrected by removing an unnecessary assignment, ensuring accurate and efficient calculations.
 
-* A new endpoint, `subtract`, has been added to the application, providing users with an expanded range of functionalities.
-* This new endpoint is accessible through the `app.py` file and is designed to work seamlessly with the existing application framework.
+### Changes
 
-### Technical Details
+* **Updated Codebase**: The `app.py` file has been updated with 4 new insertions, reflecting the changes made to the power endpoint implementation and the addition of the new endpoint.
 
-* The changes are reflected in two modified files: `.github/scripts/code_review.py` and `app.py`.
-* A total of 8 new lines of code have been inserted, while 2 lines have been removed, resulting in a net increase of 6 lines of code.
+### Commit History
 
-### Upgrade Notes
+* This release is based on the merge of pull request #54 from `kaifcoder/feature-dev`, which introduced the new power endpoint and fixed the implementation issue.
 
-* This release is a non-breaking update, and users can upgrade to the latest version without concerns about backwards compatibility.
-* However, it is recommended to review the updated code review script and familiarize yourself with the new `subtract` endpoint to take full advantage of the enhanced functionality.
+### Affected Files
 
-By incorporating these changes, this release aims to improve the overall development experience, code quality, and application functionality.
+* `app.py`: The only file modified in this release, with 4 new lines of code added to support the new power endpoint and corrected implementation.
