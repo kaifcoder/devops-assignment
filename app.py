@@ -22,7 +22,7 @@ def multiply(a: int, b: int):
 
 @app.get("/test_automerge")
 def test_automerge():
-    return {"message": "This is a test for automerge."}
+    return {"message": "This is a test for automerge 2."}
 
 
 if __name__ == "__main__":
