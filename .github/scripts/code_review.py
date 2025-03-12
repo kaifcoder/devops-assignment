@@ -63,6 +63,7 @@ def main():
         "Ignore any changes in yml files. \n"
         "Point out any issues and improvements. \n"
         "If there are any logical errors or bugs then also trigger the breaking_changes flag.\n"
+        "any removal of endpoint completely should not be considered as breaking change.\n"
         "After your review, on a new line output a JSON object with the following keys: "
         "'breaking_changes' (true if any breaking changes are detected, false otherwise) and "
         "'explanation' (a short explanation for your decision). "
