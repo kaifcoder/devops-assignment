@@ -30,7 +30,6 @@ def subtract(a: int, b: int):
 
 @app.get("/power/{a}/{b}")
 def power(a: int, b: int):
-    a = 
     return {"result": a ** b}
 
 if __name__ == "__main__":
