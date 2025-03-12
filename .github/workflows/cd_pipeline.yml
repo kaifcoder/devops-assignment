@@ -3,11 +3,7 @@ name: CD Pipeline
 on:
   push:
     branches:
-      - main
-  workflow_run:
-    workflows: ["Auto-merge"]
-    types:
-      - completed      
+      - main  
 
 jobs:
     deploy:
