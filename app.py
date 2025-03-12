@@ -24,6 +24,10 @@ def multiply(a: int, b: int):
 def divide(a: int, b: int):
     return {"result": a / b}
 
+@app.get("/subtract/{a}/{b}")
+def subtract(a: int, b: int):
+    return {"result": a - b}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
