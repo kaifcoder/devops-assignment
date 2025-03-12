@@ -14,10 +14,7 @@ def say_hello(name: str):
 def add(a: int, b: int):
     return {"result": a + b}
 
-@app.get("divide/{a}/{b}")
-def divide(a: int, b: int):
-    result = a / b if b != 0 else "Error: Division by zero"
-    return {"result": result}
+
 
 if __name__ == "__main__":
     import uvicorn
