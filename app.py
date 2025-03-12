@@ -16,6 +16,8 @@ def add(a: int, b: int):
 
 @app.get("/multiply/{a}/{b}")
 def multiply(a: int, b: int):
+    if type(a) is not int or type(b) is not int:
+        return {"error": "Both a and b must be integers."}
     return {"result": a * b}
 
 
