@@ -117,13 +117,9 @@ jobs:
 
       - name: Push Changelog Updates
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
         run: |
           git pull origin main
-          git checkout -b update-changelog
           git add CHANGELOG.md
           git commit -m "Update Changelog [ci skip]"
-          git push origin update-changelog
-          gh pr create --base main --head update-changelog --title "Update Changelog [ci skip]" --body "This PR updates the changelog. [ci skip]"
-          gh pr merge --merge --auto --delete-branch --body "Merging changelog updates into main branch. [ci skip]" 
-          
+          git push origin main
