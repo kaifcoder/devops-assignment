@@ -14,6 +14,10 @@ def say_hello(name: str):
 def add(a: int, b: int):
     return {"result": a + b}
 
+@app.get("/multiply/{a}/{b}")
+def multiply(a: int, b: int):
+    return {"result": a * b}
+
 
 
 if __name__ == "__main__":
