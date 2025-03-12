@@ -69,7 +69,7 @@ def main():
         "Diff:\n" + diff + "\n"
         "Give the Output JSON in Following Format:\n"
         "{\n"
-        "  \"review\": <Generated Review>,\n"
+        "  \"review\": <Generated Review in markdown format string>,\n"
         "  \"breaking_changes\": false,\n"
         "  \"explanation\": \"No breaking changes detected.\"\n"
         "}\n"
