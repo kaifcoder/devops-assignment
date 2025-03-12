@@ -75,7 +75,7 @@ def main():
     changelog = response.json()["choices"][0]["message"]["content"]
 
     # Write the changelog to a file.
-    with open("CHANGELOG.md", "a") as f:
+    with open("CHANGELOG.md", "w") as f:
         f.write(f"\n## {'Latest Changes' }\n")
         f.write(changelog + "\n")
     print("Changelog generated and saved to CHANGELOG.md.")
