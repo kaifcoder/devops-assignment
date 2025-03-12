@@ -1,27 +1,25 @@
 
 ## Latest Changes
-**Changelog: Release Notes**
+## Changelog
 
-**Version:** Not specified
-**Release Date:** Not specified
+### Release Summary
 
-**Summary:**
-This release introduces a new test route for automerge functionality, enhancing the application's testing capabilities.
+This release introduces significant improvements to the auto-merge workflow, enhancing its functionality, clarity, and efficiency. The changes aim to simplify the workflow, reduce unnecessary steps, and improve the overall user experience.
 
-**Changes:**
+### Key Changes
 
-* **New Test Route:** A test route has been added to the application to facilitate the testing of automerge functionality. This addition aims to improve the overall testing efficiency and reliability of the automerge feature.
-* **Code Updates:** The `app.py` file has been modified to include the new test route, with 3 new lines of code inserted to support this functionality.
+1. **Simplified Auto-Merge Workflow**: The auto-merge workflow has been refactored to simplify trigger conditions for Dependabot PRs, making it more efficient and easier to maintain.
+2. **Restrict Auto-Merge to Main Branch**: The auto-merge workflow is now restricted to pull requests targeting the main branch, ensuring that auto-merges only occur on the primary branch.
+3. **Improved Code Review Script**: The code review script has been updated to ignore changes in YAML files and specify markdown format for generated review output, enhancing the review process.
+4. **Enhanced Test Messages**: The `test_automerge` message has been updated for clarity and to reflect version 3, providing more accurate and informative test results.
+5. **Workflow Renaming**: The auto-merge workflow has been renamed for clarity, improving the overall readability and understanding of the workflow.
+6. **Removed Unnecessary Rebase Option**: The unnecessary rebase option has been removed from the auto-merge command, streamlining the workflow and reducing potential errors.
+7. **Added Auto-Merge and Branch Deletion Steps**: Auto-merge and branch deletion steps have been added to the workflow, providing a more comprehensive and automated process.
 
-**Affected Files:**
+### Technical Changes
 
-* `app.py`: Modified to include the new test route for automerge functionality.
+* The `.github/workflows/auto_merge.yml` file has been updated with 8 insertions and 3 deletions, reflecting the changes made to the auto-merge workflow.
 
-**Commit History:**
+### Upgrade Notes
 
-* Merged pull request #36 from `kaifcoder/auto-merge-test`
-* Merged branch 'main' of `https://github.com/kaifcoder/devops-assignment` into `auto-merge-test`
-* Added test route for automerge functionality
-
-**Upgrade Instructions:**
-To upgrade to this release, simply pull the latest changes from the repository and update your local codebase. No specific upgrade instructions are required, as this release only introduces a new test route and does not modify any existing functionality.
+This release is a significant improvement to the auto-merge workflow, and users are encouraged to upgrade to take advantage of the new features and improvements. Please review the updated workflow and code review script to ensure a smooth transition.
