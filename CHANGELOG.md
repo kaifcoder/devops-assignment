@@ -1,20 +1,22 @@
 
 ## Latest Changes
-**Changelog: Release [Insert Release Version]**
+**Changelog: Version [Insert Version Number]**
 
-### Summary
+### New Features
 
-This release addresses minor issues in the Continuous Deployment (CD) pipeline configuration, enhancing overall pipeline stability and readability.
+* **Division Endpoint**: A new endpoint has been added to perform division of two integers. This feature allows users to divide two numbers and retrieve the result.
 
 ### Changes
 
-* **CD Pipeline Configuration Update**: The CD pipeline YAML file (`cd_pipeline.yml`) has been updated to fix indentation issues, ensuring proper formatting and consistency.
-* **Token Usage Improvement**: The usage of tokens within the CD pipeline has been updated, aligning with best practices and improving the overall security and efficiency of the pipeline.
+* **Updated `app.py` File**: The `app.py` file has been modified to include the new division endpoint. A total of 4 new lines of code have been added to support this feature.
+
+### Commit History
+
+* Merge pull request #52 from kaifcoder/feature-dev
+* Added division endpoint to perform division of two integers
 
 ### Affected Files
 
-* `.github/workflows/cd_pipeline.yml`: This file has undergone changes to address the mentioned issues, with 5 new lines added and 5 lines removed to reflect the updates.
+* `app.py`: Updated to include the new division endpoint.
 
-### Impact
-
-These changes are expected to have a minimal impact on the overall functionality of the system, but they contribute to maintaining a clean, readable, and efficient CD pipeline configuration. This release is primarily focused on housekeeping and does not introduce new features or functionality.
+This release introduces a new division endpoint, expanding the application's mathematical capabilities. The changes are focused on the `app.py` file, with a minimal addition of 4 new lines of code.
