@@ -13,6 +13,14 @@ def get_diff_for_push():
     result = subprocess.run(["git", "diff", "HEAD~1", "HEAD"], capture_output=True, text=True)
     return result.stdout
 
+def get_changed_files(base, head):
+    result = subprocess.run(["git", "diff", "--name-only", base, head], capture_output=True, text=True)
+    return result.stdout.splitlines()
+
+def get_file_content(file_path):
+    with open(file_path, "r") as file:
+        return file.read()
+
 def post_pr_comment(owner, repo, pr_number, comment, token):
     url = f"https://api.github.com/repos/{owner}/{repo}/issues/{pr_number}/comments"
     headers = {
@@ -56,6 +64,14 @@ def main():
     if not diff:
         print("No diff found.")
         sys.exit(0)  # Nothing to review
+
+    # Check the size of the diff
+    diff_lines = diff.split()
+    if len(diff_lines) < 5:  # Adjust the threshold as needed
+        print("Diff is too small, sending full file content for review.")
+        changed_files = get_changed_files(base_sha, head_sha)
+        file_contents = {file: get_file_content(file) for file in changed_files}
+        diff = json.dumps(file_contents, indent=2)
 
     # Construct a prompt that instructs the AI to review and then output a JSON object.
     prompt = (
