@@ -32,9 +32,6 @@ def subtract(a: int, b: int):
 def power(a: int, b: int):
     return {"result": a ** b}
 
-@app.get("/modulus/{a}/{b}")
-def modulus(a: int, b: int)
-    return {"result": a % b}
 
 if __name__ == "__main__":
     import uvicorn
