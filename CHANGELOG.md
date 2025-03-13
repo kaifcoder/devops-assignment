@@ -1,23 +1,23 @@
 
 ## Latest Changes
-**Changelog: Release Notes**
+## Changelog
 
-### New Features
+### Version [Insert Version Number]
+#### New Features
+* Added an optional 'new' query parameter to the `/add` endpoint, allowing for conditional summation.
+* Updated the `/add` endpoint to return the sum with a conditional key based on the 'new' parameter.
 
-* **Power Endpoint**: A new endpoint has been added to calculate exponentiation, allowing users to perform power operations.
+#### Documentation Updates
+* Added documentation for the `/add` endpoint, including information on the new 'new' parameter behavior.
 
-### Bug Fixes
+#### Changes and Improvements
+* Refactored the `/add` endpoint to accommodate the new 'new' parameter, enhancing the overall functionality of the endpoint.
 
-* **Power Endpoint Implementation**: The power endpoint implementation has been corrected by removing an unnecessary assignment, ensuring accurate and efficient calculations.
+#### Commit History
+* Merged pull request #57 from kaifcoder/feature-dev, incorporating changes from the feature-dev branch.
+* Merged branch 'main' of https://github.com/kaifcoder/devops-assignment into feature-dev, ensuring alignment with the main branch.
 
-### Changes
+#### Code Changes
+* Modified `app.py` with 21 insertions and 2 deletions, reflecting the updates to the `/add` endpoint and the addition of new documentation.
 
-* **Updated Codebase**: The `app.py` file has been updated with 4 new insertions, reflecting the changes made to the power endpoint implementation and the addition of the new endpoint.
-
-### Commit History
-
-* This release is based on the merge of pull request #54 from `kaifcoder/feature-dev`, which introduced the new power endpoint and fixed the implementation issue.
-
-### Affected Files
-
-* `app.py`: The only file modified in this release, with 4 new lines of code added to support the new power endpoint and corrected implementation.
+This release introduces a new feature to the `/add` endpoint, allowing for more flexible and conditional summation. The updated documentation provides clarity on the new parameter behavior, making it easier for users to leverage this new functionality.
