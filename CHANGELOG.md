@@ -1,23 +1,31 @@
 
 ## Latest Changes
-## Changelog
+**Changelog**
 
-### Version [Insert Version Number]
-#### New Features
-* Added an optional 'new' query parameter to the `/add` endpoint, allowing for conditional summation.
-* Updated the `/add` endpoint to return the sum with a conditional key based on the 'new' parameter.
+**Version:** [Insert version number]
+**Release Date:** [Insert release date]
 
-#### Documentation Updates
-* Added documentation for the `/add` endpoint, including information on the new 'new' parameter behavior.
+### Summary
 
-#### Changes and Improvements
-* Refactored the `/add` endpoint to accommodate the new 'new' parameter, enhancing the overall functionality of the endpoint.
+This release includes a minor update to the `/divide` endpoint, improving the consistency of the API response format.
 
-#### Commit History
-* Merged pull request #57 from kaifcoder/feature-dev, incorporating changes from the feature-dev branch.
-* Merged branch 'main' of https://github.com/kaifcoder/devops-assignment into feature-dev, ensuring alignment with the main branch.
+### Changes
 
-#### Code Changes
-* Modified `app.py` with 21 insertions and 2 deletions, reflecting the updates to the `/add` endpoint and the addition of new documentation.
+* **API Response Format Update**: The response key for the `/divide` endpoint has been changed from `'result'` to `'divide'`. This change aims to standardize the response format and improve the overall API usability.
+* **Affected Files**: The update is reflected in the `app.py` file, where a single line of code has been modified to accommodate the new response key.
 
-This release introduces a new feature to the `/add` endpoint, allowing for more flexible and conditional summation. The updated documentation provides clarity on the new parameter behavior, making it easier for users to leverage this new functionality.
+### Impact
+
+This change is expected to have a minimal impact on existing integrations, as it only affects the response format of a single endpoint. However, developers who have implemented the `/divide` endpoint in their applications may need to update their code to account for the new response key.
+
+### Upgrade Instructions
+
+To take advantage of this update, simply update your API client or integration to expect the new response key (`'divide'`) when calling the `/divide` endpoint. No other changes are required.
+
+### Commit History
+
+This release is based on the merge of pull request #58 from the `kaifcoder/feature-dev` branch. The commit history includes a single change to the `app.py` file, which is reflected in the diff:
+
+* `app.py`: 1 insertion, 1 deletion
+
+By incorporating this update, developers can ensure their applications remain compatible with the latest API changes and take advantage of the improved response format.
