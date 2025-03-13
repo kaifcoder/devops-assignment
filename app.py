@@ -12,8 +12,10 @@ def say_hello(name: str):
 
 @app.get("/add/{a}/{b}")
 def add(a: int, b: int, new: bool = Query(False,alias="new")):
+    # if user wants to use the new key, return the sum with the key "sum" instead of "result"
     if new:
         return {"sum": a + b}
+    # otherwise, return the sum with the key "result" as usual
     return {"result": a + b}
 
 @app.get("/multiply/{a}/{b}")
