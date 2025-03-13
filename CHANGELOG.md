@@ -1,31 +1,22 @@
 
 ## Latest Changes
-**Changelog**
+**Changelog: Release [Insert Release Version]**
 
-**Version:** [Insert version number]
-**Release Date:** [Insert release date]
+### New Features
 
-### Summary
-
-This release includes a minor update to the `/divide` endpoint, improving the consistency of the API response format.
+* **Modulus Endpoint**: A new endpoint, `/modulus`, has been added to the application. This endpoint calculates the modulus of two numbers, providing a convenient way to perform this mathematical operation via API.
 
 ### Changes
 
-* **API Response Format Update**: The response key for the `/divide` endpoint has been changed from `'result'` to `'divide'`. This change aims to standardize the response format and improve the overall API usability.
-* **Affected Files**: The update is reflected in the `app.py` file, where a single line of code has been modified to accommodate the new response key.
-
-### Impact
-
-This change is expected to have a minimal impact on existing integrations, as it only affects the response format of a single endpoint. However, developers who have implemented the `/divide` endpoint in their applications may need to update their code to account for the new response key.
-
-### Upgrade Instructions
-
-To take advantage of this update, simply update your API client or integration to expect the new response key (`'divide'`) when calling the `/divide` endpoint. No other changes are required.
+* **Updated `app.py` File**: The `app.py` file has been modified to include the new `/modulus` endpoint. This update adds 4 new lines of code to the file, implementing the necessary logic for the modulus calculation.
 
 ### Commit History
 
-This release is based on the merge of pull request #58 from the `kaifcoder/feature-dev` branch. The commit history includes a single change to the `app.py` file, which is reflected in the diff:
+* Merge pull request #59 from kaifcoder/feature-dev
+* Added `/modulus` endpoint to calculate modulus of two numbers
 
-* `app.py`: 1 insertion, 1 deletion
+### Affected Files
 
-By incorporating this update, developers can ensure their applications remain compatible with the latest API changes and take advantage of the improved response format.
+* `app.py`: 1 file changed, with 4 new insertions
+
+This release introduces a new feature to the application, enhancing its mathematical capabilities. The updated `app.py` file reflects these changes, providing a new endpoint for modulus calculations.
