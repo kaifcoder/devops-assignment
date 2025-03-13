@@ -10,6 +10,21 @@ def read_root():
 def say_hello(name: str):
     return {"message": "Hello, " + name}
 
+
+'''
+    ENDPOINT: /add/{a}/{b}
+    PARAMS:
+        a: int
+        b: int
+        new: bool
+    RETURNS:
+        {
+            "result": int
+        }
+    DESCRIPTION:
+        Returns the sum of a and b.
+        If the new key is set to True, the key will be "sum" instead of "result".
+'''
 @app.get("/add/{a}/{b}")
 def add(a: int, b: int, new: bool = Query(False,alias="new")):
     # if user wants to use the new key, return the sum with the key "sum" instead of "result"
