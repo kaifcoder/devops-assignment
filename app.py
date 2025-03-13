@@ -26,7 +26,7 @@ def divide(a: int, b: int):
 
 @app.get("/subtract/{a}/{b}")
 def subtract(a: int, b: int):
-    return {"result": a - b + 1}
+    return {"result": a - b}
 
 @app.get("/power/{a}/{b}")
 def power(a: int, b: int):
