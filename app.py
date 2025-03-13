@@ -22,7 +22,7 @@ def multiply(a: int, b: int):
 
 @app.get("/divide/{a}/{b}")
 def divide(a: int, b: int):
-    return {"result": a / b}
+    return {"divide": a / b}
 
 @app.get("/subtract/{a}/{b}")
 def subtract(a: int, b: int):
