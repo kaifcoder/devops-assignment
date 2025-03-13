@@ -35,7 +35,7 @@ def power(a: int, b: int):
 # new endpoint with syntax error
 @app.get("/syntax_error")
 def syntax_error():
-    return {"result": 1 + }
+    return {"result": 1 + 1}
 
 
 if __name__ == "__main__":
