@@ -1,23 +1,23 @@
 
 ## Latest Changes
-**Changelog: Release [Insert Version Number]**
+**Changelog: Release Notes**
 
-### Removed Features
+**Version:** [Insert version number]
+**Release Date:** [Insert release date]
 
-* The modulus endpoint has been removed from the application. This change affects the `app.py` file, where the corresponding code has been deleted.
+**Summary:**
+This release addresses a syntax error issue and introduces a new testing endpoint. The changes aim to improve the overall stability and testing capabilities of the application.
 
-### File Changes
+**Changes:**
 
-* `app.py`: 3 lines of code have been removed, resulting in a total of 3 deletions.
+1. **Fix: Syntax Error Resolution**
+	* A syntax error in the `/syntax_error` endpoint has been fixed, ensuring that the endpoint now functions correctly and does not produce any syntax-related errors.
+2. **New Feature: Testing Endpoint**
+	* A new endpoint has been added specifically for testing purposes. This endpoint intentionally contains a syntax error, allowing developers to test and verify the application's error handling mechanisms.
 
-### Impact of Changes
+**Affected Files:**
 
-The removal of the modulus endpoint may affect any functionality or features that relied on this endpoint. Users and developers should review their code and update it accordingly to ensure compatibility with this release.
+* `app.py`: 5 new lines of code have been added to this file to implement the fixes and new feature.
 
-### Upgrade Instructions
-
-To upgrade to this release, simply replace the existing `app.py` file with the updated version. No additional configuration changes are required.
-
-### Notes
-
-This release focuses on simplifying the application by removing unused or redundant endpoints. If you have any questions or concerns about this change, please contact our support team for assistance.
+**Upgrade Notes:**
+This release is a minor update that fixes a syntax error and adds a new testing endpoint. It is recommended that users upgrade to this version to take advantage of the improved stability and testing capabilities. As this is a minor update, no significant changes to existing workflows or configurations are expected.
