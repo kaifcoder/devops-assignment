@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 
 app = FastAPI()
 
@@ -11,7 +11,9 @@ def say_hello(name: str):
     return {"message": "Hello, " + name}
 
 @app.get("/add/{a}/{b}")
-def add(a: int, b: int):
+def add(a: int, b: int, new: bool = Query(False,alias="new")):
+    if new:
+        return {"sum": a + b}
     return {"result": a + b}
 
 @app.get("/multiply/{a}/{b}")
