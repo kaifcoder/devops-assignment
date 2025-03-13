@@ -12,7 +12,7 @@ def say_hello(name: str):
 
 @app.get("/add/{a}/{b}")
 def add(a: int, b: int):
-    return {"result": a + b}
+    return {"sum": a + b}
 
 @app.get("/multiply/{a}/{b}")
 def multiply(a: int, b: int):
