@@ -1,22 +1,23 @@
 
 ## Latest Changes
-**Changelog: Release [Insert Release Version]**
+**Changelog: Release [Insert Version Number]**
 
-### New Features
+### Removed Features
 
-* **Modulus Endpoint**: A new endpoint, `/modulus`, has been added to the application. This endpoint calculates the modulus of two numbers, providing a convenient way to perform this mathematical operation via API.
+* The modulus endpoint has been removed from the application. This change affects the `app.py` file, where the corresponding code has been deleted.
 
-### Changes
+### File Changes
 
-* **Updated `app.py` File**: The `app.py` file has been modified to include the new `/modulus` endpoint. This update adds 4 new lines of code to the file, implementing the necessary logic for the modulus calculation.
+* `app.py`: 3 lines of code have been removed, resulting in a total of 3 deletions.
 
-### Commit History
+### Impact of Changes
 
-* Merge pull request #59 from kaifcoder/feature-dev
-* Added `/modulus` endpoint to calculate modulus of two numbers
+The removal of the modulus endpoint may affect any functionality or features that relied on this endpoint. Users and developers should review their code and update it accordingly to ensure compatibility with this release.
 
-### Affected Files
+### Upgrade Instructions
 
-* `app.py`: 1 file changed, with 4 new insertions
+To upgrade to this release, simply replace the existing `app.py` file with the updated version. No additional configuration changes are required.
 
-This release introduces a new feature to the application, enhancing its mathematical capabilities. The updated `app.py` file reflects these changes, providing a new endpoint for modulus calculations.
+### Notes
+
+This release focuses on simplifying the application by removing unused or redundant endpoints. If you have any questions or concerns about this change, please contact our support team for assistance.
