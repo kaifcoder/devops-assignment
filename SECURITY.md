@@ -115,12 +115,13 @@ kind: Secret
 metadata:
   name: regcred
 data:
-  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJjYy1tcy1rOHMtdHJhaW5pbmcuY29tbW9uLnJlcG9zaXRvcmllcy5jbG91ZC5zYXAiOiB7CgkJCSJhdXRoIjogIlkyeGhkV1JsT2pseFVqVm9ZbWh0TjBSNmR6WkNUbHBqVWtaMiIKCQl9Cgl9LAoJInN0YWNrT3JjaGVzdHJhdG9yIjogInN3YXJtIgp9
+  .dockerconfigjson: <base64-encoded-credentials>
 ```
 
-This base64-encoded secret contained:
-- Username: `[REDACTED]`
-- Password: `[REDACTED]`
+This base64-encoded secret contained actual Docker registry credentials including:
+- Registry server
+- Username
+- Password
 
 **Solution:**
 Removed the hardcoded secret and added instructions to create it securely using kubectl.
