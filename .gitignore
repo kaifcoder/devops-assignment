@@ -143,8 +143,12 @@ venv.bak/
 *.crt
 *.p12
 *.pfx
-*secret*.yaml
-*secret*.yml
+secret.yaml
+secret.yml
+secrets.yaml
+secrets.yml
+*.secret.yaml
+*.secret.yml
 kubeconfig.yaml
 kubeconfig.yml
 .aws/

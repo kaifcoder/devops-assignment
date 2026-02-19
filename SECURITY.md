@@ -119,8 +119,8 @@ data:
 ```
 
 This base64-encoded secret contained:
-- Username: `claude`
-- Password: `9qR5hbhm7Dzw6BNZcRFv`
+- Username: `[REDACTED]`
+- Password: `[REDACTED]`
 
 **Solution:**
 Removed the hardcoded secret and added instructions to create it securely using kubectl.
