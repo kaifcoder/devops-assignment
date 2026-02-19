@@ -131,9 +131,6 @@ celerybeat.pid
 .env
 .env.local
 .env.*.local
-.env.development.local
-.env.test.local
-.env.production.local
 .venv
 env/
 venv/
@@ -147,10 +144,6 @@ venv.bak/
 *.crt
 *.p12
 *.pfx
-secret.yaml
-secret.yml
-secrets.yaml
-secrets.yml
 *.secret.yaml
 *.secret.yml
 kubeconfig.yaml
