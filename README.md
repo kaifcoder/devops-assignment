@@ -19,3 +19,13 @@
 # Changelogs 
 
 For detailed changelogs, see the [CHANGELOG.md](CHANGELOG.md) file.
+
+## Security
+
+🔒 **Important:** This project follows security best practices for credential management. 
+
+- **Never commit secrets** to version control
+- All sensitive credentials are managed via GitHub Secrets and Kubernetes secrets
+- For detailed security guidelines, see [SECURITY.md](SECURITY.md)
+
+If you discover any security issues, please refer to the [SECURITY.md](SECURITY.md) file for reporting instructions.

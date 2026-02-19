@@ -129,12 +129,27 @@ celerybeat.pid
 
 # Environments
 .env
+.env.*
 .venv
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*secret*.yaml
+*secret*.yml
+kubeconfig.yaml
+kubeconfig.yml
+.aws/
+.azure/
+.kube/config
 
 # Spyder project settings
 .spyderproject
